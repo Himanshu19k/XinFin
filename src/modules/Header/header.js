@@ -6,25 +6,20 @@ import DarkMode from "../components/DarkMode";
 
 const Container = styled.div`
   width: 100%;
-  display:flex;
+  display: flex;
   height: 64px;
   background-color: #191d43;
   display: flex;
   flex-flow: row nowrap;
-  
 `;
 
-const Div = styled.div`
- display: flex;
- 
-`;
 const Image = styled.img`
   margin-left: 5%;
   width: 35px;
 `;
 const Span = styled.span`
   width: 139px;
-  display:flex;
+  display: flex;
   font-size: 17px;
   margin-top: 2%;
   font-weight: 500;
@@ -40,7 +35,7 @@ const Span = styled.span`
 `;
 const Search = styled.input`
   width: 373px;
-  display:flex;
+  display: flex;
   height: 42px;
   margin-top: 1%;
   border-radius: 2px;
@@ -61,7 +56,7 @@ const Search = styled.input`
 `;
 const Button = styled.button`
   background: #3e49b8;
-  display:flex;
+  display: flex;
   margin-top: 1%;
   width: 41px;
   height: 41px;
@@ -105,32 +100,32 @@ text-align: left;
 color: #ffffff;
 background: transparent;
 margin-top: 22px;
-margin-left: 234px;
+margin-left: 205px;
 }
 `;
 
 const Share = styled.menu`
-display: -webkit-box;
-display: -webkit-flex;
-display: -ms-flexbox;
-display: flex;
-font-size: 15px;
-font-weight: 500;
-font-stretch: normal;
-font-style: normal;
-line-height: 1.19;
-text-align: left;
-color: #ffffff;
-background: transparent;
-margin-top: 22px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  font-size: 15px;
+  font-weight: 500;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.19;
+  text-align: left;
+  color: #ffffff;
+  background: transparent;
+  margin-top: 22px;
 `;
 
 const Archive = styled.button`
   font-family: Raleway;
-  width:137px;
+  width: 137px;
   font-size: 15px;
   font-weight: 500;
-  display:flex;
+  display: flex;
   font-stretch: normal;
   font-style: normal;
   text-align: left;
@@ -139,7 +134,6 @@ const Archive = styled.button`
   margin-top: 19px;
   border: none;
 `;
-
 
 /*const Lightmode = styled.img`
   margin-top: 2px;
@@ -151,38 +145,36 @@ export default function HeaderComponent() {
   return (
     <Container>
       <Row>
-        <Div>
-        <Image src="../../images/TwitterS.svg" alt=" "/>
-        </Div>
-        <Div>
+        <Image src="../../images/TwitterS.svg" alt=" " />
+
         <Span>Twitter D-App</Span>
-        </Div>
-        <Div>
+
         <Search type="text" placeholder="Search by Handle name, Hash tag" />
-        </Div>
-        <Div>
+
         <Button>
           <img src="../../images/Search.svg" alt=" " />
         </Button>
-        </Div>
-        <Div>
+
         <Advancesearch>Advance Search</Advancesearch>
-        </Div>
-        <Div>        
+
         <About>About</About>
-        </Div>
-        <Div>
-        <Share>Share</Share>
-        </Div>
-       <Div> 
-        <Archive href="#">Tweet Archive</Archive> 
-        </Div>
-       <Div>
+        <Share>
+          <div class="dropdown">
+            <button onclick="myFunction()" class="dropbtn">
+              Dropdown
+            </button>
+            <div id="myDropdown" class="dropdown-content">
+              <a href="#">Link 1</a>
+              <a href="#">Link 2</a>
+              <a href="#">Link 3</a>
+            </div>
+          </div>
+        </Share>
+
+        <Archive href="#">Tweet Archive</Archive>
+
         <DarkMode />
-</Div>
       </Row>
     </Container>
   );
 }
-
-

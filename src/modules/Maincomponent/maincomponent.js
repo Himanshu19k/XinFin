@@ -1,24 +1,43 @@
 import React from "react";
 import styled from "styled-components";
 import { Row, Column } from "simple-flexbox";
+import React, { useState, useEffect } from "react";
+import {ThemeProvider} from "styled-components";
+import  {useDarkMode} from "./components/useDarkMode"
+import { GlobalStyles } from "./components/Globalstyle";
+import { lightTheme, darkTheme } from "./components/Themes"
+import Toggle from "./components/Toggler"
+import "./App.css";
+import dummyData from "./data";
 
 const MainContainer = styled.div`
   display: flex;
+
+  flex-flow: nowrap;
   width: 100%;
-  height: 1500px;
   padding: 48px 70px 48px 70px;
   background-color: #f5f6f9;
 `;
-const Container = styled.div`
-  justify-content: center;
-  display: flex;
+const Trending = styled.div`
+  width: 470%;
+  height: 536px;
+  margin: 18px 26px 51px 0px;
+  padding: 25px 18px 25px 18px;
+  border-radius: 5px;
+  background-color: #ffffff;
 `;
 
+const Node = styled.div`
+  width: 920%;
+  height: 270px;
+  margin: 18px 26px 51px 0px;
+  padding: 25px 18px 25px 18px;
+  border-radius: 5px;
+  background-color: #ffffff;
+`;
 const Title = styled.text`
-  width: 106px;
-  height: 21px;
-  font-family: Raleway;
-  font-size: 18px;
+  font-family: "Raleway", sans-serif !important;
+  font-size: 17px;
   font-weight: 600;
   font-stretch: normal;
   font-style: normal;
@@ -29,62 +48,82 @@ const Title = styled.text`
 `;
 
 const Box = styled.div`
-  width: 373px;
-  height: 200px;
+  width: 281px;
+  height: 176px;
   margin: 18px 26px 51px 0px;
   padding: 25px 18px 25px 18px;
   border-radius: 5px;
   background-color: #ffffff;
 `;
 const Speedtitle = styled.text`
-  width: 117px;
+  width: 411px;
   height: 21px;
-  margin: 0 199.1px 9px 0;
-  font-family: Raleway;
-  font-size: 18px;
+  /* margin: 0; */
+  font-family: "Raleway", sans-serif !important;
+  font-size: 15px;
   font-weight: 600;
 `;
 
-const Speed = styled.text`
-width: 78px;
+const WSpeed = styled.text`
+  width: 78px;
   height: 26px;
   margin: 9px 238.1px 24px 0;
-  font-family: Raleway;
+  font-family: "Raleway", sans-serif !important;
   font-size: 22px;
   font-weight: 600;
   text-align: left;
   color: #3366ff;
 `;
+
+const RSpeed = styled.text`
+  width: 78px;
+  height: 26px;
+  width: 79px;
+  height: 26px;
+  margin: 9px 238.1px 0.3px 3px;
+  font-family: Raleway;
+  font-size: 18px;
+  font-weight: 600;
+  text-align: left;
+  color: #10ca93;
+`;
 // Xinfin twitter
+
 export default function MainComponent() {
   return (
     <MainContainer>
-      <Container>
+      <Column>
         <Row>
           <Column>
-            <Title>
-              Writing Data
-              <Box>
+            <Title>Writing Speed</Title>
+            <Box>
+              <Column>
                 <Speedtitle>Saving Speed</Speedtitle>
-                <Speed>135/Sec</Speed>
-              </Box>
-            </Title>
+                <WSpeed>345/Sec</WSpeed>
+              </Column>
+            </Box>
           </Column>
           <Column>
-          <Title>
-              Writing Data
-              <Box>
+            <Title>Reading Speed</Title>
+            <Box>
+              <Column>
                 <Speedtitle>Saving Speed</Speedtitle>
-              </Box>
-            </Title>
+                <RSpeed>345/Sec</RSpeed>
+              </Column>
+            </Box>
           </Column>
         </Row>
-      </Container>
+        <Row>
+          <Column>
+            <Title>Nodes</Title>
+            <Node></Node>
+          </Column>
+        </Row>
+      </Column>
+      <Column>
+        <Title>Top 20 Trending</Title>
+        <Trending></Trending>
+      </Column>
     </MainContainer>
   );
 }
-
-
-
-
-
