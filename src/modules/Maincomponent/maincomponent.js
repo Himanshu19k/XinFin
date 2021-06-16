@@ -1,14 +1,10 @@
-import React from "react";
+import React, { useState, useEffect , memo } from "react";
 import styled from "styled-components";
 import { Row, Column } from "simple-flexbox";
-import React, { useState, useEffect } from "react";
-import {ThemeProvider} from "styled-components";
-import  {useDarkMode} from "./components/useDarkMode"
-import { GlobalStyles } from "./components/Globalstyle";
-import { lightTheme, darkTheme } from "./components/Themes"
-import Toggle from "./components/Toggler"
-import "./App.css";
-import dummyData from "./data";
+import Themeprovider from "react"
+import "../styles/App.css";
+
+import MapChart from "../Map/mapcharts"
 
 const MainContainer = styled.div`
   display: flex;
@@ -69,7 +65,7 @@ const WSpeed = styled.text`
   height: 26px;
   margin: 9px 238.1px 24px 0;
   font-family: "Raleway", sans-serif !important;
-  font-size: 22px;
+  font-size: 18px;
   font-weight: 600;
   text-align: left;
   color: #3366ff;
@@ -77,8 +73,6 @@ const WSpeed = styled.text`
 
 const RSpeed = styled.text`
   width: 78px;
-  height: 26px;
-  width: 79px;
   height: 26px;
   margin: 9px 238.1px 0.3px 3px;
   font-family: Raleway;
@@ -122,7 +116,9 @@ export default function MainComponent() {
       </Column>
       <Column>
         <Title>Top 20 Trending</Title>
-        <Trending></Trending>
+        <Trending>
+          <MapChart/>
+        </Trending>
       </Column>
     </MainContainer>
   );

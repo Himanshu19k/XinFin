@@ -2,7 +2,14 @@ import React from "react";
 import styled from "styled-components";
 import { Row } from "simple-flexbox";
 import "../styles/App.css";
-import DarkMode from "../components/DarkMode";
+// import {ThemeProvider} from "styled-components";
+// import { GlobalStyles } from "../components/Globalstyle";
+// import { lightTheme, darkTheme } from "../components/Themes";
+
+// import Toggle from "../components/toggler";
+// import dummyData from "./data";
+// import { lightTheme, darkTheme } from "./components/Themes",
+import useDarkMode from "../components/useDarkMode";
 
 const Container = styled.div`
   width: 100%;
@@ -142,6 +149,18 @@ const Archive = styled.button`
   margin-left: 0px;
 `;*/
 export default function HeaderComponent() {
+  // const App = () => {
+  //   const [videos, setVideos] = useState([]);
+  //   const [theme, setTheme] = useState('light');
+  //   const themeToggler = () => {
+  //     theme === 'light' ? setTheme('dark') : setTheme('light')
+  // }
+  //   useEffect(() => {
+  //     const timer = setTimeout(() => {
+  //       setVideos(dummyData);
+  //     }, 1000);
+  //     return () => clearTimeout(timer);
+  //   }, []);
   return (
     <Container>
       <Row>
@@ -173,7 +192,7 @@ export default function HeaderComponent() {
 
         <Archive href="#">Tweet Archive</Archive>
 
-        <DarkMode />
+        <useDarkMode />
       </Row>
     </Container>
   );
